@@ -1,4 +1,3 @@
-import { StatusBar } from "expo-status-bar";
 import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Icon, SearchBar, TabBar } from "@ant-design/react-native";
@@ -15,27 +14,19 @@ export default function App() {
   const [selectedTab, setSelectedTab] = useState("detect");
 
   const renderContent = (pageText) => {
+    const url = "https://lit-mesa-73764.herokuapp.com/mobile";
     switch (selectedTab) {
       case "user":
         return (
-          <WebView
-            source={{ uri: "http://192.168.0.190:3000/mobile/user" }}
-            style={{ margin: 20 }}
-          />
+          <WebView source={{ uri: url + "/user" }} style={{ margin: 20 }} />
         );
       case "report":
         return (
-          <WebView
-            source={{ uri: "http://192.168.0.190:3000/mobile/report" }}
-            style={{ margin: 20 }}
-          />
+          <WebView source={{ uri: url + "/report" }} style={{ margin: 20 }} />
         );
       default:
         return (
-          <WebView
-            source={{ uri: "http://192.168.0.190:3000/mobile/detect" }}
-            style={{ margin: 20 }}
-          />
+          <WebView source={{ uri: url + "/detect" }} style={{ margin: 20 }} />
         );
     }
   };
