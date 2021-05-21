@@ -19,15 +19,15 @@ export default function App() {
       case "user":
         return (
           <WebView
-            source={{ uri: "http://192.168.0.190:3000/user" }}
-            style={{ marginTop: 20 }}
+            source={{ uri: "http://192.168.0.190:3000/mobile/user" }}
+            style={{ margin: 20 }}
           />
         );
       case "report":
         return (
           <WebView
-            source={{ uri: "http://192.168.0.190:3000/report" }}
-            style={{ marginTop: 20 }}
+            source={{ uri: "http://192.168.0.190:3000/mobile/report" }}
+            style={{ margin: 20 }}
           />
         );
       default:
