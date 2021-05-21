@@ -32,18 +32,12 @@ export default function App() {
         );
       default:
         return (
-          <View
-            style={{ flex: 1, alignItems: "center", backgroundColor: "white" }}
-          >
-            <Text style={{ margin: 50 }}>{pageText}</Text>
-          </View>
+          <WebView
+            source={{ uri: "http://192.168.0.190:3000/mobile/detect" }}
+            style={{ margin: 20 }}
+          />
         );
     }
-    return (
-      <View style={{ flex: 1, alignItems: "center", backgroundColor: "white" }}>
-        <Text style={{ margin: 50 }}>{pageText}</Text>
-      </View>
-    );
   };
 
   const onChangeTab = (tabName) => {
@@ -69,7 +63,7 @@ export default function App() {
         {renderContent("My Tab")}
       </TabBar.Item>
       <TabBar.Item
-        title="Detect"
+        title="Detect history"
         icon={<Icon name="home" />}
         selected={selectedTab === "detect"}
         onPress={() => onChangeTab("detect")}
